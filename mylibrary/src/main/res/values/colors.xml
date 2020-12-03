@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4DBDA6</color>
+    <color name="colorPrimaryDark">#4DBDA6</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="dashboard_main_bg">#4FA896</color>
+    <color name="page_bg">#E5E5E5</color>
+    <color name="dashboard_card_bg">#62B6A5</color>
+    <color name="white">#ffffff</color>
+
+    <color name="edittext_bg">#F4F4F4</color>
+    <color name="light_white">#F3F3F3</color>
+
+    <color name="bottom_nave_inactive">#A5A5A5</color>
+
+    <color name="tab_bg">#393738</color>
+    <color name="black">#000000</color>
+
+    <color name="back_badge_bg">#ABABAB</color>
+
+    <color name="lineColor">#ECECEC</color>
+
+    <color name="textHeaderColor">#8E8E8E</color>
+    <color name="inactiveColor">#575757</color>
+    <color name="textTotalColor">#878787</color>
+
+
+</resources>
