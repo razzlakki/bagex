@@ -43,7 +43,7 @@ class PickUpFragment : BaseFragment() {
         )
         progresBar?.visibility = View.VISIBLE;
         disposable =  APIClient.create()
-            .getOrderByAWBNo(awbNo = 280000000807)
+            .getDeliveryJobs(delReq)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

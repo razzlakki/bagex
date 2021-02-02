@@ -79,7 +79,7 @@ class DashboardActivity : BaseActivity() {
         items.add(
             DashboardAdapter.DashboardItems(
                 "SCANS", R.drawable.ic_outbound, 0,
-                OutBoundActivity::class.java
+                ScanOptionActivity::class.java
             )
         )
 //        items.add(DashboardAdapter.DashboardItems("PROFILE", R.drawable.ic_profile))
