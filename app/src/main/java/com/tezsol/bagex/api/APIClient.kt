@@ -27,8 +27,9 @@ class APIClient {
             val okHttpClient = OkHttpClient()
                 .newBuilder().addInterceptor(EncryptionInterceptor())
                 .addInterceptor(httpLoggingInterceptor)
-
+//                .authenticator(Authenticator())
                 .build()
+
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(
                     RxJava2CallAdapterFactory.create()

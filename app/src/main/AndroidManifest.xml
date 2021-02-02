@@ -9,16 +9,40 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
+
     <application
         android:name=".BageXApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".BeltActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DeliveryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BagScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PickUpOrderSummaryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PickupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ExceptionTypeActivity"
             android:screenOrientation="portrait"

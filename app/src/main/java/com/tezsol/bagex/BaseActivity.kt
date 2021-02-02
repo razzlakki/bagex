@@ -5,9 +5,12 @@ import android.transition.Explode
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.tezsol.bagex.util.ScanDetailsUtil
+import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.app_bar_all.*
 
 abstract class BaseActivity : AppCompatActivity() {
+
+    protected var disposable: Disposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,5 +43,6 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         ScanDetailsUtil.instance.clearOrderInfo()
+        disposable?.dispose()
     }
 }

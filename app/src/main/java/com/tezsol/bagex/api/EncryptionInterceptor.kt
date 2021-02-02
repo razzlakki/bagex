@@ -11,16 +11,12 @@ class EncryptionInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request: Request = chain.request()
         val rawBody: RequestBody? = request.body()
-        if (rawBody != null) {
-
-
-
-            val token = SharedUtil.instance.getString(SharedUtil.LOGIN_TOKEN);
-            request = request.newBuilder()
-                .header("Content-Type", "application/json")
-                .header("api-version", "1").addHeader("Authorization", "Bearer $token")
-                .method(request.method(), rawBody).build()
-        }
+        val token = SharedUtil.instance.getString(SharedUtil.LOGIN_TOKEN);
+        request = request.newBuilder()
+            .header("Content-Type", "application/json")
+            .header("api-version", "1")
+            .addHeader("Authorization", "Bearer $token")
+            .method(request.method(), rawBody).build()
 
         return chain.proceed(request);
     }

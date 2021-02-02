@@ -31,7 +31,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.2"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
@@ -56,55 +56,7 @@
                     android:orientation="vertical">
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile No"
-                        android:textColor="@color/back_badge_bg" />
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/mobileNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:orientation="vertical">
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No of Bags"
-                        android:textColor="@color/back_badge_bg" />
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/noOfBags"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="14dp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.2"
-                    android:orientation="vertical">
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
+                        android:id="@+id/nameHeader"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Name"
@@ -125,39 +77,19 @@
                     android:orientation="vertical">
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
+                        android:id="@+id/phoneNoHeader"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pickup Date"
+                        android:text="Phone No"
                         android:textColor="@color/back_badge_bg" />
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/pickupDate"
+                        android:id="@+id/phoneNo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:orientation="vertical">
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pickup Time"
-                        android:textColor="@color/back_badge_bg" />
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/pickupTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
@@ -175,13 +107,35 @@
                     android:orientation="vertical">
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
+                        android:id="@+id/deliveryTmHeader"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Distance"
+                        android:text="Delivery Time"
                         android:textColor="@color/back_badge_bg" />
 
                     <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/distance"
+                        android:id="@+id/deliveryTm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.tezsol.bagex.custom.ui.BagexTextView
+                        android:id="@+id/deliveryDateHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Date"
+                        android:textColor="@color/back_badge_bg" />
+
+                    <com.tezsol.bagex.custom.ui.BagexTextView
+                        android:id="@+id/deliveryDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/black" />
@@ -190,30 +144,11 @@
 
                 <View
                     android:layout_width="0dp"
-                    android:layout_height="1dp"
+                    android:layout_height="2dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                 </View>
-
-                <LinearLayout
-                    android:id="@+id/timerView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <com.tezsol.bagex.custom.ui.BagexTextView
-                        android:id="@+id/timer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_timer"
-                        android:drawablePadding="6dp"
-                        android:textColor="#F03131" />
-
-                </LinearLayout>
-
 
             </LinearLayout>
 

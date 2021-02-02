@@ -22,4 +22,15 @@
     <string name="awb_no">AWB No</string>
     <string name="bagid">Bag ID</string>
     <string name="serNo">Seal No</string>
+    <string name="order_no">Order no</string>
+    <string name="terminal_no">Terminal No</string>
+    <string name="pickup_time">Pickup Time</string>
+    <string name="pickup_date">Pickup Date</string>
+    <string name="total_order_bags">Total order bags</string>
+    <string name="actual_bags">Actual Bags</string>
+    <string name="to_be_paid">Additional Amount to be paid</string>
+    <string name="start_scan">Start Scan</string>
+    <string name="bag_tag">Bag tag Number*</string>
+    <string name="scan_or_enter">Scan or enter</string>
+    <string name="seal_number">Seal Number</string>
 </resources>

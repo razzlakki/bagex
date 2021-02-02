@@ -43,7 +43,7 @@ class PickUpFragment : BaseFragment() {
         )
         progresBar?.visibility = View.VISIBLE;
         disposable =  APIClient.create()
-            .getDeliveryJobs(delReq)
+            .getOrderByAWBNo(awbNo = 280000000807)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -66,7 +66,7 @@ class PickUpFragment : BaseFragment() {
         if (result?.data != null) {
             noItemsText.visibility = View.GONE
             pickupRecyclerView.visibility = View.VISIBLE
-            pickupRecyclerView.adapter = PickupAdapter(list = result.data)
+            pickupRecyclerView.adapter = activity?.let { PickupAdapter(it,list = result.data) }
         } else {
             pickupRecyclerView.visibility = View.GONE
             noItemsText.visibility = View.VISIBLE

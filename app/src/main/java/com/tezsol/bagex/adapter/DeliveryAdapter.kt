@@ -19,13 +19,13 @@ import com.tezsol.bagex.util.DataUtil
 import com.tezsol.bagex.util.DateUtil
 import kotlinx.android.synthetic.main.btn_item.view.*
 
-class PickupAdapter(private val context: FragmentActivity, private val list: List<OrdersInfo>) :
-    RecyclerView.Adapter<PickupAdapter.PickupViewHolder>() {
+class DeliveryAdapter(private val context: FragmentActivity, private val list: List<OrdersInfo>) :
+    RecyclerView.Adapter<DeliveryAdapter.PickupViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PickupViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return PickupViewHolder(inflater.inflate(R.layout.pickup_line_item, parent, false))
+        return PickupViewHolder(inflater.inflate(R.layout.delivery_line_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: PickupViewHolder, position: Int) {
@@ -43,20 +43,18 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
         private var name: TextView? = null
         private var addresTxt: TextView? = null
         private var phoneNumber: TextView? = null
-        private var pickupDate: TextView? = null
-        private var pickupTime: TextView? = null
+        private var deliveryDate: TextView? = null
+        private var deliveryTime: TextView? = null
         private var btnsLyt: LinearLayout? = null
         private var bottomView: LinearLayout? = null
         private var proceedView: View? = null
-        private var noOfBags: TextView? = null
 
         init {
             idName = itemView.findViewById(R.id.idName)
             name = itemView.findViewById(R.id.name)
-            phoneNumber = itemView.findViewById(R.id.mobileNumber)
-            noOfBags = itemView.findViewById(R.id.noOfBags)
-            pickupDate = itemView.findViewById(R.id.pickupDate)
-            pickupTime = itemView.findViewById(R.id.pickupTime)
+            phoneNumber = itemView.findViewById(R.id.phoneNo)
+            deliveryDate = itemView.findViewById(R.id.deliveryDate)
+            deliveryTime = itemView.findViewById(R.id.deliveryTm)
             btnsLyt = itemView.findViewById(R.id.btnsLyt)
             bottomView = itemView.findViewById(R.id.bottomView)
             addresTxt = itemView.findViewById(R.id.address)
@@ -64,11 +62,10 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
         }
 
 
-        fun bind(adapter: PickupAdapter, position: Int, item: OrdersInfo) {
-            idName?.text = "${item.awbNo}"
+        fun bind(adapter: DeliveryAdapter, position: Int, item: OrdersInfo) {
+            idName?.text = "${item.awbNo}";
             name?.text = item.flightNo;
             phoneNumber?.text = item.tPhone
-            noOfBags?.text = "${item.bagsNo}"
             val res: String? = item.spdDate?.replace("T", " ")?.let {
                 DateUtil().getDateFromString(
                     "yyyy-MM-dd HH:MM:SS",
@@ -85,8 +82,8 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
                 intent.putExtra("awbNumber", item.awbNo)
                 adapter.context.startActivity(intent)
             }
-            pickupDate?.text = res
-            pickupTime?.text = item.spdTime
+            deliveryDate?.text = res
+            deliveryTime?.text = item.spdTime
             itemView.setOnClickListener {
                 DataUtil.getInstance().pickupSelectedItem = position
                 adapter.notifyDataSetChanged()
@@ -100,17 +97,21 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
                     val viewItem = itemLayout.inflate(R.layout.btn_item, null)
                     viewItem.btnName?.text = data.name
                     viewItem.btnIcon.setImageResource(data.icon)
-//                    if (data.name.equals("POD", true)) {
-//                        viewItem.btnName?.text = data.name
-//                        viewItem.squreBg.setBackgroundResource(R.drawable.item_btn_bg_active)
-//                        viewItem.btnIcon.setColorFilter(
-//                            ContextCompat.getColor(
-//                                viewItem.context,
-//                                R.color.white
-//                            ), android.graphics.PorterDuff.Mode.SRC_IN
-//                        );
-//                        viewItem.btnIcon.setImageResource(data.icon)
-//                    }
+                    viewItem.setOnClickListener(null)
+                    if (data.name.equals("POD", true)) {
+                        viewItem.btnName?.text = data.name
+                        viewItem.squreBg.setBackgroundResource(R.drawable.item_btn_bg_active)
+                        viewItem.btnIcon.setColorFilter(
+                            ContextCompat.getColor(
+                                viewItem.context,
+                                R.color.white
+                            ), android.graphics.PorterDuff.Mode.SRC_IN
+                        );
+                        viewItem.btnIcon.setImageResource(data.icon)
+                        viewItem.setOnClickListener(View.OnClickListener {
+
+                        })
+                    }
                     var params = viewItem?.layoutParams
                     if (params == null) {
                         params = LinearLayout.LayoutParams(
@@ -123,8 +124,7 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
                         params.weight = 1f
                     }
                     viewItem.layoutParams = params
-                    if (!data.name.equals("POD", true))
-                        btnsLyt?.addView(viewItem)
+                    btnsLyt?.addView(viewItem)
                 }
             } else {
                 bottomView?.visibility = View.GONE
@@ -134,6 +134,4 @@ class PickupAdapter(private val context: FragmentActivity, private val list: Lis
     }
 
 }
-
-
 

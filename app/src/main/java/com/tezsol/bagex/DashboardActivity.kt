@@ -44,41 +44,41 @@ class DashboardActivity : BaseActivity() {
         val items = ArrayList<DashboardAdapter.DashboardItems>()
         items.add(
             DashboardAdapter.DashboardItems(
-                "JOBS",
+                "PICK UP",
                 R.drawable.ic_jobs,
                 R.id.action_job,
-                JobsActivity::class.java
+                PickupActivity::class.java
             )
         )
         items.add(
             DashboardAdapter.DashboardItems(
-                "SCANS", R.drawable.ic_scan, 0,
-                ScanOptionActivity::class.java
+                "DEIVERY", R.drawable.ic_delivery, 0,
+                DeliveryActivity::class.java
             )
         )
         items.add(
             DashboardAdapter.DashboardItems(
-                "EXCEPTION",
+                "BELT",
                 R.drawable.ic_exceptions,
                 R.id.action_exception,
-                ExceptionActivity::class.java
+                BeltActivity::class.java
             )
         )
         items.add(
             DashboardAdapter.DashboardItems(
-                "TRACKING", R.drawable.ic_tracking, 0,
+                "OPERATIONS SCAN", R.drawable.ic_scan, 0,
                 TracingActivity::class.java
             )
         )
         items.add(
             DashboardAdapter.DashboardItems(
-                "INBOUND", R.drawable.ic_inbound, 0,
+                "TRACKING", R.drawable.ic_tracking, 0,
                 InboundActivity::class.java
             )
         )
         items.add(
             DashboardAdapter.DashboardItems(
-                "OUTBOUND", R.drawable.ic_outbound, 0,
+                "SCANS", R.drawable.ic_outbound, 0,
                 OutBoundActivity::class.java
             )
         )

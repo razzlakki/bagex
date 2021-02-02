@@ -6,6 +6,7 @@ data class OrdersInfo(
     val tAirline: String? = null,
     val tService: String? = null,
     val tPupCity: String? = null,
+    val firstName:String? = null,
     val tEmail: String? = null,
     val tPhone: String? = null,
     val countryCode: String? = null,

@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity() {
 
-    private var disposable: Disposable? = null
+
 
     override fun onPostOnCreate() {
         login_btn_view.setOnClickListener {
